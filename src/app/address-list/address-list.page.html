@@ -1,0 +1,92 @@
+<html>
+
+<head>
+  <style>
+    /* width */
+    ::-webkit-scrollbar {
+      width: 1px;
+      height: 5px;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+      /* box-shadow: inset 0 0 5px grey; 
+          border-radius: 5px; */
+      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+      /* background: red; 
+          border-radius: 5px;
+          width: 1px;
+          height: 2px; */
+      background-color: darkgrey;
+      outline: 1px solid slategrey;
+      border-radius: 100%;
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+      background: #b30000;
+    }
+  </style>
+</head>
+
+<body>
+  <app-top-bar></app-top-bar>
+  <br>
+  <br>
+  <ion-grid>
+    <ion-row>
+      <!-- Size=12 is the size the col will be below the sm breakpoint, 
+          whilst 3 is the size above the breakpoint -->
+      <ion-col size="12" size-sm="3" class="hideit">
+        <p> 1 of 3</p>
+      </ion-col>
+      <ion-col size="12" size-sm="6" class="middle-display">
+        <h4>Delivery Address</h4>
+        <hr>
+        <form>
+          <h3>Select a delivery address</h3>
+          <div class="address-display">
+            <input type="radio" name="address" checked>
+            <p>313 rd Fl Sujata Indl Estate, Noorbaba Dargah Road, Thane H.o.</p>
+            <div class="deliver">
+              <button>Deliver to this address</button>
+            </div>
+            <br>
+            <div class="delete-delivery">
+              <button>Delete the address</button>
+            </div>
+          </div>
+          <div class="address-display">
+            <input type="radio" name="address">
+            <p>D Block, Plot No 103, Bharat Galvanishing Cmp, Gandhi Nagar, Opp India Tube Mill, Vikhroli (w)</p>
+            <div class="deliver">
+              <button>Deliver to this address</button>
+            </div>
+            <br>
+            <div class="delete-delivery">
+              <button>Delete the address</button>
+            </div>
+          </div>
+        </form>
+        <div class="add-address">
+          <button>
+            Add new address
+          </button>
+
+        </div>
+        <br>
+        <br>
+      </ion-col>
+      <ion-col size="12" size-sm="3" class="hideit">
+        <p> 3 of 3</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <app-bottom-bar></app-bottom-bar>
+</body>
+
+</html>

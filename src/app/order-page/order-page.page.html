@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    /* width */
+    ::-webkit-scrollbar {
+      width: 1px;
+      height: 5px;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+      /* box-shadow: inset 0 0 5px grey; 
+          border-radius: 5px; */
+      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+      /* background: red; 
+          border-radius: 5px;
+          width: 1px;
+          height: 2px; */
+      background-color: darkgrey;
+      outline: 1px solid slategrey;
+      border-radius: 100%;
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+      background: #b30000;
+    }
+  </style>
+</head>
+
+<body>
+  <app-top-bar></app-top-bar>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" size-sm="1" class="hideit">
+        <p> 1 of 3</p>
+      </ion-col>
+      <ion-col size="12" size-sm="10" class="middle-display">
+        <h2>Orders</h2>
+        <hr>
+        <ion-card>
+          <div class="image">
+          <img src="https://i.pinimg.com/originals/44/1f/1e/441f1ed347c99ca929e88564aaaf7e2a.jpg" />
+          </div>
+          <ion-card-header>
+            <ion-card-title>Product name</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+           Will be delivered on DD/MM/YYYY
+          </ion-card-content>
+          <button>
+            Cancel Order
+          </button>
+        </ion-card>
+        <div class="row">
+
+          <div class="container">
+            <!-- <h4>Cart <span class="price" style="color:black"><i class="fa fa-shopping-cart"></i> <b>4</b></span></h4> -->
+            <p>Product Name <span class="price">$15</span></p>
+            <p>Delivery Charges <span class="price">$40</span></p>
+            <hr>
+            <p>Total <span class="price" style="color:black"><b>$55</b></span></p>
+          </div>
+        </div>
+      </ion-col>
+      <ion-col size="12" size-sm="1" class="hideit">
+        <p> 1 of 3</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <app-bottom-bar></app-bottom-bar>
+</body>
+
+</html>

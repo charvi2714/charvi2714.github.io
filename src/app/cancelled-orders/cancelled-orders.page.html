@@ -1,0 +1,71 @@
+<html>
+
+<head>
+  <style>
+    /* width */
+    ::-webkit-scrollbar {
+      width: 1px;
+      height: 5px;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+      /* box-shadow: inset 0 0 5px grey; 
+            border-radius: 5px; */
+      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+      /* background: red; 
+            border-radius: 5px;
+            width: 1px;
+            height: 2px; */
+      background-color: darkgrey;
+      outline: 1px solid slategrey;
+      border-radius: 100%;
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+      background: #b30000;
+    }
+  </style>
+</head>
+
+<body>
+  <app-top-bar></app-top-bar>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" size-sm="1" class="hideit">
+        <p> 1 of 3</p>
+      </ion-col>
+      <ion-col size="12" size-sm="10" class="middle-display">
+        <h2>Cancelled - Orders</h2>
+        <hr>
+        <div class="sub" *ngFor="let b of [1,2,3,4]">
+          <ion-card>
+            <div class="image">
+              <img src="https://i.pinimg.com/originals/23/04/47/230447d273c21794d0333455d65d488e.png" />
+            </div>
+            <ion-card-header>
+              <ion-card-title>Product Name</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              Will be delivered on DD/MM/YYYY
+            </ion-card-content>
+          </ion-card>
+          <br>
+          <br>
+          <br>
+        </div>
+      </ion-col>
+      <ion-col size="12" size-sm="1" class="hideit">
+        <p> 3 of 3</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <app-bottom-bar></app-bottom-bar>
+</body>
+
+</html>

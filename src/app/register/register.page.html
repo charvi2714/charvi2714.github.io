@@ -1,0 +1,117 @@
+<html>
+
+<head>
+  <title>Login</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500&display=swap" rel="stylesheet">
+  <style>
+    /* width */
+    ::-webkit-scrollbar {
+      width: 1px;
+      height: 5px;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+      /* box-shadow: inset 0 0 5px grey; 
+        border-radius: 5px; */
+      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+      /* background: red; 
+        border-radius: 5px;
+        width: 1px;
+        height: 2px; */
+      background-color: darkgrey;
+      outline: 1px solid slategrey;
+      border-radius: 100%;
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+      background: #b30000;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div *ngIf="loading" class='loader'>
+    <div class="bg"></div>
+    <div class='circle'></div>
+    <div class='circle'></div>
+    <div class='circle'></div>
+    <div class='circle'></div>
+    <div class='circle'></div>
+  </div>
+
+  <app-top-bar></app-top-bar>
+
+  <!-- <h2>SignUp</h2>
+<input type="text" #emailsignup>
+<input type="password" #passwordsignup>
+<button (click)="onsignup(emailsignup.value,passwordsignup.value)">Sign Up</button>
+<br>
+  <h2>Login</h2>
+  <input type="text" #email>
+  <input type="password" #password>
+  <button (click)="onsignin(email.value,password.value)">Sign In</button>
+  <br>
+  <br>
+  <button (click)="resetpassword()">Reset password</button>
+  <br>
+  <br> -->
+
+  <div *ngIf = "loading == false" class="parent">
+    <div class="child">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm"></div>
+          <div class="col-sm">
+            <img
+              src="https://member.imagineacademy.microsoft.com/sites/all/themes/custom/ita_members/images/office-icon.png"
+              alt="User Icon">
+          </div>
+          <div class="col-sm"></div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm"></div>
+          <div class="col-sm">
+            <!-- Simple Textfield -->
+            <h2>Register New User</h2>
+            <form action="#">
+              <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                  placeholder="Enter email" #email>
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="current-password" class="form-control" id="exampleInputPassword1" placeholder="Password"
+                  #password>
+              </div>
+              <button type="button" class="btn btn-primary"
+                (click)="onsignup(email.value,password.value)">Register</button>
+              <br>
+              <br>
+              <button type="button" class="btn btn-success">Login</button>
+              <br>
+              <br><br>
+              <br><br>
+              <br>
+            </form>
+
+          </div>
+          <div class="col-sm"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <app-bottom-bar></app-bottom-bar>
+</body>
+
+</html>

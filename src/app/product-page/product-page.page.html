@@ -1,0 +1,140 @@
+<html>
+
+<head>
+  <style>
+    /* width */
+    ::-webkit-scrollbar {
+      width: 1px;
+      height: 5px;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+      /* box-shadow: inset 0 0 5px grey; 
+          border-radius: 5px; */
+      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+      /* background: red; 
+          border-radius: 5px;
+          width: 1px;
+          height: 2px; */
+      background-color: darkgrey;
+      outline: 1px solid slategrey;
+      border-radius: 100%;
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+      background: #b30000;
+    }
+  </style>
+</head>
+
+<body>
+  <app-top-bar></app-top-bar>
+  <br>
+  <br>
+  <ion-grid>
+    <ion-row>
+      <!-- Size=12 is the size the col will be below the sm breakpoint, 
+          whilst 3 is the size above the breakpoint -->
+      <ion-col size="12" size-sm="3" class="hideit">
+        1 of 3
+      </ion-col>
+      <ion-col size="12" size-sm="6" class="middle-display">
+        <h2>{{serverResponse.productName}}</h2>
+        <div style="  text-align:center;margin:0; padding:0;">
+          <ng-image-slider #nav
+            [images]="imageObject"
+            [infinite]="true"
+            [animationSpeed]="1"
+            [autoSlide]="2"
+            [imageSize]="{width: 300, height: 300, space: 4}"
+            slideImage="1"></ng-image-slider>
+        </div>
+
+        
+        <hr>
+        <div class="size">
+          <ion-list>
+            <ion-radio-group allow-empty-selection="false" name="radio-group" (ionChange)="radioGroupChange($event)" #radioGroup>
+              <ion-list-header>
+                <ion-label>SIZE</ion-label>
+              </ion-list-header>
+
+              <ion-item (ionSelect)="radioSelect($event)">
+                <ion-label>Small</ion-label>
+                <ion-radio slot="start" value="s" checked="true"></ion-radio>
+              </ion-item>
+
+              <ion-item (ionSelect)="radioSelect($event)">
+                <ion-label>Medium</ion-label>
+                <ion-radio slot="start" value="m"></ion-radio>
+              </ion-item>
+
+              <ion-item (ionSelect)="radioSelect($event)">
+                <ion-label>Large</ion-label>
+                <ion-radio slot="start" value="l"></ion-radio>
+              </ion-item>
+
+              <ion-item (ionSelect)="radioSelect($event)">
+                <ion-label>XL</ion-label>
+                <ion-radio slot="start" value="xl"></ion-radio>
+              </ion-item>
+            </ion-radio-group>
+          </ion-list>
+        </div>
+        <hr>
+        <div class="price">
+          <p>₹ {{serverResponse.productPrice}}</p>
+          <div class="buy">
+            <a (click)="cart()"><button>Buy Now</button></a>
+          </div>
+          <br>
+          <br>
+          <div class="cart">
+           <a (click)="addtocart()"> <button>Add To Cart</button></a>
+          </div>
+        </div>
+        <br>
+        <hr>
+
+        <div class="product_description">
+          <h3>Product Description</h3>
+          <p>
+            {{serverResponse.productDescription}}
+          </p>
+          
+        </div>
+        <hr>
+        
+        <!-- <div class="customer_review">
+          <h3>Customer Review</h3>
+          <div class="user_profile">
+            <i class="fa fa-user-circle-o" aria-hidden="true"> User Name</i>
+            <br><br>
+            <p>Ut bibendum augue at interdum porttitor. Duis non semper lacus. Nulla sed quam egestas, tempor dolor ac,
+              molestie magna. Nulla vitae sapien luctus, sollicitudin orci id, pretium sapien. Fusce eget accumsan
+              mauris. Ut tincidunt neque id odio feugiat cursus. Aenean iaculis turpis sit amet egestas faucibus.
+              Quisque quis pharetra massa. Fusce accumsan vestibulum sem, vel vulputate velit sollicitudin nec.
+              Pellentesque sed purus eu magna vulputate finibus.</p>
+            <div class="show">
+              <button>View more</button>
+            </div>
+          </div>
+        </div> -->
+        <br>
+        <br>
+      </ion-col>
+      <ion-col size="12" size-sm="3" class="hideit">
+        3 of 3
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <app-bottom-bar></app-bottom-bar>
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+body
+{
+    padding: 1%;
+    position:absolute; 
+    top:0; 
+    right:0; 
+    bottom:0; 
+    left:0; 
+    overflow-y:scroll; 
+    overflow-x: hidden;
+    background: rgb(93,91,91);
+background: radial-gradient(circle, rgba(93,91,91,1) 0%, rgba(0,0,0,1) 100%);
+}
+p{
+    color: white;
+}
+html:not(.hydrated) body { display: block; }
+
+.middle-display
+{
+    
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+.middle-display>div {
+    flex: 0 50%;
+    /*demo*/
+    // border-style: inset;
+    // border-width: 1px;
+    // box-sizing:border-box
+  }
+
+.information img
+{
+    border-radius: 5px;
+    height: 200px;
+    width: 200px;
+}
+
+.card-div
+{
+    width: 95%;
+    background-color: rgba(255, 255, 255, 0.705);
+    border-radius: 1%;
+}
+
+.information 
+{
+    display: grid;
+    place-items: center;
+    padding: 10px;
+}
+
+.middle-display p h5
+{
+    display: grid;
+    place-items: center; 
+}
+
+@media only screen and (max-width: 600px) {
+    .middle-display>div {
+        
+        /*demo*/
+        border-bottom: 1px solid white;
+        box-sizing:border-box
+      }
+      .middle-display
+{
+    
+    display: block;
+    flex-wrap: wrap;
+    
+}
+.card-div
+{
+    width: 100%;
+}
+    .hideit{
+        display: none;
+    }
+}

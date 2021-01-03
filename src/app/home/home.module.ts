@@ -1,18 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomePage } from './home.page';
-
+import { ComponentModule } from './../components/component.module';
 import { HomePageRoutingModule } from './home-routing.module';
-
+import { MaterialModule } from '../material.module';
 
 @NgModule({
   imports: [
     CommonModule,
+    ComponentModule,
     FormsModule,
     IonicModule,
-    HomePageRoutingModule
+    HomePageRoutingModule,
+    MaterialModule,
+    ReactiveFormsModule,
   ],
   declarations: [HomePage]
 })

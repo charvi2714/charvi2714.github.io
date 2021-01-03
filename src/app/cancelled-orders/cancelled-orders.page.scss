@@ -1,0 +1,91 @@
+html:not(.hydrated) body {
+    display: block;
+  }
+  body {
+    padding: 1%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background: rgb(93, 91, 91);
+    background: radial-gradient(
+      circle,
+      rgba(93, 91, 91, 1) 0%,
+      rgba(0, 0, 0, 1) 100%
+    );
+  }
+  hr {
+    border: 0;
+    clear: both;
+    display: block;
+    width: 100%;
+    background-color: white;
+    height: 1px;
+  }
+  p {
+    color: white;
+  }
+  
+  .middle-display {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .middle-display > div {
+    flex: 0 50%;
+    /*demo*/
+    // border-style: inset;
+    // border-width: 1px;
+    // box-sizing:border-box
+  }
+  
+  .information img {
+    border-radius: 5px;
+    height: 200px;
+    width: 200px;
+  }
+  
+  .information {
+    display: grid;
+    place-items: center;
+    padding: 10px;
+  }
+  
+  .middle-display p {
+    display: grid;
+    place-items: center;
+  }
+  
+  .sub img {
+    height: 200px;
+    width: 200px;
+  }
+  
+  .image {
+    display: grid;
+    place-items: center;
+  }
+  
+  h2 {
+    color: white;
+    text-align: center;
+  }
+  
+  @media only screen and (max-width: 600px) {
+    .middle-display > div {
+      /*demo*/
+      border-bottom: 1px solid white;
+      box-sizing: border-box;
+    }
+    .middle-display {
+      display: block;
+      flex-wrap: wrap;
+    }
+    .hideit {
+      display: none;
+    }
+  }
+  

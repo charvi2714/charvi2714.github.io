@@ -1,0 +1,107 @@
+<html>
+
+<head>
+  <style>
+    /* width */
+    ::-webkit-scrollbar {
+      width: 1px;
+      height: 5px;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+      /* box-shadow: inset 0 0 5px grey; 
+            border-radius: 5px; */
+      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+      /* background: red; 
+            border-radius: 5px;
+            width: 1px;
+            height: 2px; */
+      background-color: darkgrey;
+      outline: 1px solid slategrey;
+      border-radius: 100%;
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+      background: #b30000;
+    }
+  </style>
+</head>
+
+<body>
+  <app-top-bar></app-top-bar>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" size-sm="3" class="hideit">
+        <p> 1 of 3</p>
+      </ion-col>
+      <ion-col size="12" size-sm="6">
+        <h3>User Profile</h3>
+        <hr>
+        <br>
+        <div class="profile-image">
+          <img
+            src="https://history.ucr.edu/sites/g/files/rcwecm1916/files/styles/form_preview/public/blank-profile-picture-png.png?itok=MQ-iPuNG"
+            alt="">
+        </div>
+        <ion-grid>
+          <ion-row>
+            <ion-col size="12" size-xs="6">
+              <h4> User Name</h4>
+            </ion-col>
+            <ion-col size="12" size-xs="6">
+              <h4> Dakini Bala </h4>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+        <ion-grid>
+          <ion-row>
+            <ion-col size="12" size-xs="6">
+              <h4>Phone Number</h4>
+            </ion-col>
+            <ion-col size="12" size-xs="6">
+              <h4> 9876543210 </h4>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+        <ion-grid>
+          <ion-row>
+            <ion-col size="12" size-xs="6">
+              <h4> EmailId</h4>
+            </ion-col>
+            <ion-col size="12" size-xs="6">
+              <h4> Dakinibala@gmail.com </h4>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+        <ion-grid>
+          <ion-row>
+            <ion-col size="12" size-xs="6" class="orders">
+              <a (click) = "orders()"><button>Orders</button></a>
+            </ion-col>
+            <ion-col size="12" size-xs="6" class="cancelled-orders">
+              <a (click) = "cancelled_orders()"><button>Cancelled Orders</button></a>
+            </ion-col>
+            <ion-col size="12" size-xs="6" class="cancelled-orders">
+              <a (click) = "Logout()"><button>Logout</button></a>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-col>
+      <ion-col size="12" size-sm="3" class="hideit">
+        <p> 3 of 3</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <br>
+  <br>
+  <br>
+  <app-bottom-bar></app-bottom-bar>
+</body>
+
+</html>

@@ -1,20 +1,157 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<html>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<head>
+  <title>Home Page</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500&display=swap" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
-</ion-content>
+  <style>
+    /* width */
+    ::-webkit-scrollbar {
+      width: 1px;
+      height: 5px;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+      /* box-shadow: inset 0 0 5px grey; 
+        border-radius: 5px; */
+      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+      /* background: red; 
+        border-radius: 5px;
+        width: 1px;
+        height: 2px; */
+      background-color: darkgrey;
+      outline: 1px solid slategrey;
+      border-radius: 100%;
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+      background: #b30000;
+    }
+  </style>
+</head>
+
+<body>
+  <app-top-bar></app-top-bar>
+
+  <div id="stars"></div>
+  <div id="stars2"></div>
+  <div id="stars3"></div>
+  <br>
+  <br>
+  <ion-grid>
+    <ion-row>
+      <!-- Size=12 is the size the col will be below the sm breakpoint, 
+        whilst 3 is the size above the breakpoint -->
+      <ion-col size="12" size-sm="2" class="hideit">
+        1 of 3
+      </ion-col>
+      <ion-col size="12" size-sm="8">
+        <!-- <h2>Category</h2>
+        <div class="scrollmenu">
+          <div class="sub" *ngFor="let item of values | keyvalue">
+            <img src="https://image.kilimall.com/uganda/shop/store/goods/591/2017/11/591_05631122058552463_360.jpg.webp"
+              alt="image">
+            <br>
+            <p>{{item.value}} </p>
+          </div>
+
+        </div>
+        <hr> -->
+
+        <!-- <button (click)='openbrowser()'> clickme</button>
+  <button (click)='payment_trail()'>Pay</button>
+  <button (click)='test_api()'>Testing api</button> -->
+
+        <!-- <p>{{ data1 }}</p> -->
+
+        <div class="parent">
+          <div class="child">
+            <img src="https://i.pinimg.com/originals/6e/79/24/6e7924745047fa29d19060ff4fb39d56.jpg" alt="Top dresses">
+          </div>
+          <br>
+          <div>
+            <p>Top dress</p>
+          </div>
+        </div>
+        <!-- <hr> -->
+
+        <!-- <div *ngFor="let item of values | keyvalue">
+
+          <div class="category_1">
+            <p>
+              {{item.value}}
+            </p>
+            <a (click)="test()"> <button>
+                <img alt="Info icon" src="https://img.icons8.com/android/344/info.png" lazy="loaded">
+                Show More
+              </button>
+            </a>
+          </div>
+
+          <div class="scrollmenu">
+            <div class="sub" *ngFor="let b of temp[item.key]">
+              <div class="information">
+                <a (click)="product_page()"><img src={{b.imageurls[0]}} alt="image"></a>
+              </div>
+
+              <p>Name: {{b.name}} </p>
+            </div>
+
+          </div>
+          <hr>
+          <br>
+
+
+        </div> -->
+        <div class="wrapper">
+          <div *ngFor="let item of values | keyvalue">
+            <h2><strong>{{item.value}}</strong> </h2>
+
+            <div class="cards">
+
+              <div *ngFor="let b of temp[item.key]">
+
+                <figure class="card">
+
+                  <img src={{b.imageurls[0]}} />
+
+                  <figcaption>{{b.name}}</figcaption>
+
+                </figure>
+                <h3>
+                  <a [routerLink]="['/product-page', b.product_id]">
+                    {{ b.name }}
+                  </a>
+                </h3>
+
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </ion-col>
+      <ion-col size="12" size-sm="2" class="hideit">
+        3 of 3
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <br>
+  <br>
+
+
+  <app-bottom-bar></app-bottom-bar>
+
+</body>
+
+</html>

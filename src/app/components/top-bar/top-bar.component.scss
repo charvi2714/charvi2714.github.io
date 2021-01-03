@@ -1,0 +1,28 @@
+.wrapper
+{
+  // background:red;
+  overflow:auto;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: black;
+  z-index: 1;
+}
+
+.c1
+{
+  float:left;
+  // background:blue;
+  width: 100px;
+  text-align: left;
+  padding-left: 10px;
+  padding-top: 10px;
+  
+}
+
+
+button {
+  position: absolute;
+  right: 30px;
+  top: 5px;
+}
