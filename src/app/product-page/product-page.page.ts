@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
 import { CartService } from '../cart.service';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
@@ -12,11 +14,13 @@ export class ProductPagePage implements OnInit {
 
   constructor(private router: Router, private route: ActivatedRoute, private http: HttpClient, private cartService: CartService) { }
   productIdFromRoute: any;
+  size = 'undefined';
   serverResponse: any = 0;
   imageObject: any = 0;
   selectedRadioGroup: any = {value: undefined};
   selectedRadioItem: any;
   name = 'Angular';
+  loading = true;
   // imageObject = [{
   //     image: 'https://sanjayv.github.io/ng-image-slider/contents/assets/img/slider/5.jpg',
   //     thumbImage: 'https://sanjayv.github.io/ng-image-slider/contents/assets/img/slider/5.jpg',
@@ -43,6 +47,7 @@ export class ProductPagePage implements OnInit {
     this.serverResponse = await response.json();
     console.log(this.serverResponse);
     this.imageObject = this.serverResponse.urls;
+    this.loading = false;
   }
 
   radioGroupChange(event) {
@@ -63,12 +68,18 @@ export class ProductPagePage implements OnInit {
 
   addtocart()
   {
-    if (typeof this.selectedRadioGroup.value === 'undefined'){
+    if (this.size === 'undefined'){
       alert('Please select size');
     }
     else {
-      this.cartService.addToCart(this.productIdFromRoute, this.selectedRadioGroup.value);
+      this.cartService.addToCart(this.productIdFromRoute, this.size);
     }
+  }
+
+  doRefresh(event) {
+    console.log('Begin async operation');
+
+    window.location.reload();
   }
 
 }

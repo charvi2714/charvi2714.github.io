@@ -1,4 +1,5 @@
 import { ComponentModule } from './../components/component.module';
+
 import { NgImageSliderModule } from 'ng-image-slider';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';

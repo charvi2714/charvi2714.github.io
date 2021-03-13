@@ -8,6 +8,8 @@ import { Router } from '@angular/router';
 })
 export class LoginPage implements OnInit {
   isSignedin = false;
+  email: "";
+  password: "";
   constructor(public firebaseservice: FirebaseService, private router: Router) { }
 
   ngOnInit() {
@@ -19,13 +21,7 @@ export class LoginPage implements OnInit {
     this.router.navigate(['/register']);
   }
 
-  async onsignup(email: string, password: string) {
-    await this.firebaseservice.signup(email, password);
-    if (this.firebaseservice.isLoggedIn) {
-      this.isSignedin = true;
-      this.router.navigate(['/profile']);
-    }
-  }
+  
 
   async resetpassword() {
     // tslint:disable-next-line: prefer-const
@@ -39,6 +35,9 @@ export class LoginPage implements OnInit {
     if (this.firebaseservice.isLoggedIn) {
       this.isSignedin = true;
       this.router.navigate(['/profile']);
+    }
+    else {
+      window.alert("Wrong Credentials");
     }
   }
 }

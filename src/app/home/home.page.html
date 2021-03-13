@@ -1,3 +1,4 @@
+<ion-content>
 <html>
 
 <head>
@@ -38,38 +39,38 @@
 </head>
 
 <body>
-  <app-top-bar></app-top-bar>
 
-  <div id="stars"></div>
-  <div id="stars2"></div>
-  <div id="stars3"></div>
-  <br>
-  <br>
-  <ion-grid>
+  <div *ngIf="loading" class='loader'>
+    <ion-progress-bar type="indeterminate"></ion-progress-bar>
+  </div>
+
+  <app-top-bar></app-top-bar>
+  
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)" class = "refresh">
+      <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+    
+    
+      
+    
+ 
+  
+  <ion-grid *ngIf = "loading == false">
     <ion-row>
       <!-- Size=12 is the size the col will be below the sm breakpoint, 
         whilst 3 is the size above the breakpoint -->
       <ion-col size="12" size-sm="2" class="hideit">
-        1 of 3
+        <!-- 1 of 3 -->
       </ion-col>
       <ion-col size="12" size-sm="8">
-        <!-- <h2>Category</h2>
-        <div class="scrollmenu">
-          <div class="sub" *ngFor="let item of values | keyvalue">
-            <img src="https://image.kilimall.com/uganda/shop/store/goods/591/2017/11/591_05631122058552463_360.jpg.webp"
-              alt="image">
-            <br>
-            <p>{{item.value}} </p>
-          </div>
 
-        </div>
-        <hr> -->
 
         <!-- <button (click)='openbrowser()'> clickme</button>
   <button (click)='payment_trail()'>Pay</button>
   <button (click)='test_api()'>Testing api</button> -->
 
         <!-- <p>{{ data1 }}</p> -->
+        <br><br>
 
         <div class="parent">
           <div class="child">
@@ -80,69 +81,24 @@
             <p>Top dress</p>
           </div>
         </div>
-        <!-- <hr> -->
-
-        <!-- <div *ngFor="let item of values | keyvalue">
-
-          <div class="category_1">
-            <p>
-              {{item.value}}
-            </p>
-            <a (click)="test()"> <button>
-                <img alt="Info icon" src="https://img.icons8.com/android/344/info.png" lazy="loaded">
-                Show More
-              </button>
-            </a>
-          </div>
-
-          <div class="scrollmenu">
-            <div class="sub" *ngFor="let b of temp[item.key]">
-              <div class="information">
-                <a (click)="product_page()"><img src={{b.imageurls[0]}} alt="image"></a>
-              </div>
-
-              <p>Name: {{b.name}} </p>
-            </div>
-
-          </div>
-          <hr>
-          <br>
-
-
-        </div> -->
-        <div class="wrapper">
-          <div *ngFor="let item of values | keyvalue">
-            <h2><strong>{{item.value}}</strong> </h2>
-
-            <div class="cards">
-
-              <div *ngFor="let b of temp[item.key]">
-
-                <figure class="card">
-
-                  <img src={{b.imageurls[0]}} />
-
-                  <figcaption>{{b.name}}</figcaption>
-
-                </figure>
-                <h3>
-                  <a [routerLink]="['/product-page', b.product_id]">
-                    {{ b.name }}
-                  </a>
-                </h3>
-
-
-              </div>
-
-            </div>
-
-          </div>
-
+       
+        <div *ngFor="let item of values | keyvalue">
+        <h2><strong>{{item.value}}</strong> </h2>
+        <div class="product_display">
+          
+        <div class="card" *ngFor="let b of temp[item.key]">
+          <img src={{b.imageurls[0]}}  alt="Denim Jeans" style="width:100%">
+          <h1>{{b.name}}</h1>
+          <p class="price">$19.99</p>
+          <p><button [routerLink]="['/product-page', b.product_id]">View Product</button></p>
         </div>
-
+      
+      </div>
+    </div>
+    <br>
       </ion-col>
       <ion-col size="12" size-sm="2" class="hideit">
-        3 of 3
+        <!-- 3 of 3 -->
       </ion-col>
     </ion-row>
   </ion-grid>
@@ -150,8 +106,10 @@
   <br>
 
 
+
   <app-bottom-bar></app-bottom-bar>
 
 </body>
 
 </html>
+</ion-content>

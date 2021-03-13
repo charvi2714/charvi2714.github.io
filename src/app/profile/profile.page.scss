@@ -10,74 +10,16 @@ body {
   left: 0;
   overflow-y: scroll;
   overflow-x: hidden;
-  background: rgb(93, 91, 91);
+  // background: rgb(93,91,91);
+  // background: radial-gradient(circle, rgba(93,91,91,1) 0%, rgba(0,0,0,1) 100%);
+  background: rgb(235, 169, 224);
   background: radial-gradient(
     circle,
-    rgba(93, 91, 91, 1) 0%,
-    rgba(0, 0, 0, 1) 100%
+    rgba(235, 169, 224, 1) 0%,
+    rgba(228, 181, 236, 1) 22%,
+    rgba(156, 211, 232, 1) 100%
   );
 }
-hr {
-  border: 0;
-  clear: both;
-  display: block;
-  width: 100%;
-  background-color: white;
-  height: 1px;
-}
-h3 {
-  color: white;
-  text-align: center;
-}
-
-.profile-image {
-  display: grid;
-  place-items: center;
-}
-
-.profile-image img {
-  height: 200px;
-  width: 200px;
-  border-radius: 100%;
-}
-
-h4 {
-  color: white;
-  text-align: center;
-}
-
-.orders {
-  display: grid;
-  place-items: center;
-}
-
-.cancelled-orders {
-  display: grid;
-  place-items: center;
-}
-
-.orders a button {
-  width: 100%;
-  height: 30px;
-  background: rgb(255, 135, 55);
-  background: radial-gradient(
-    circle,
-    rgba(255, 135, 55, 1) 0%,
-    rgba(255, 97, 0, 1) 100%
-  );
-}
-
-.cancelled-orders button {
-  width: 90%;
-  height: 30px;
-  background: rgb(255, 220, 93);
-  background: radial-gradient(
-    circle,
-    rgba(255, 220, 93, 1) 0%,
-    rgba(239, 255, 123, 1) 100%
-  );
-}
-
 @media only screen and (max-width: 600px) {
   .hideit {
     display: none;

@@ -19,7 +19,7 @@ export class HomePage {
   transactionNote: string;
   currency: string;
   values: any;
-
+  loading = true;
   // tslint:disable-next-line: member-ordering
   color: string;
   data1: any;
@@ -41,6 +41,7 @@ export class HomePage {
     // this.product = Object.keys(data).map(key => data[key]);
     console.log(data[1]);
     console.log(data[3]);
+    this.loading = false;
   }
 
 
@@ -94,6 +95,13 @@ export class HomePage {
       }
     });
   }
+
+  doRefresh(event) {
+    console.log('Begin async operation');
+
+    window.location.reload();
+  }
+
 
   payment_trail()
   {

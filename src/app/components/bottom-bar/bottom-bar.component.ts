@@ -11,6 +11,12 @@ export class BottomBarComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  home()
+  {
+    this.router.navigate(['/home']);
+  }
+
   Verifylogin(){
     if (localStorage.getItem('user') == null)
     {

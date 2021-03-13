@@ -12,7 +12,7 @@ export class ProfilePage implements OnInit {
   constructor(public firebaseservice: FirebaseService, public router: Router) { }
 
   ngOnInit() {
-    this.firebaseservice.isAuthenticated();
+    console.log(this.firebaseservice.isAuthenticated());
   }
 
   orders()

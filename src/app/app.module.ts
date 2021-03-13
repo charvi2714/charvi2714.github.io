@@ -9,7 +9,9 @@ import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 import { AppComponent } from './app.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { AppRoutingModule } from './app-routing.module';
+import { MatSelectModule } from '@angular/material/select';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
@@ -24,6 +26,8 @@ import {Router} from '@angular/router';
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    MatFormFieldModule,
+    MatSelectModule,
     AngularFireModule.initializeApp({
       apiKey: 'AIzaSyDOuSymGpo1ZZ3pc0Z0-V1At8jbfLTC5Bc',
     authDomain: 'pranaygitam1.firebaseapp.com',

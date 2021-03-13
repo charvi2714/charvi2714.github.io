@@ -11,18 +11,28 @@ export class RegisterPage implements OnInit {
 
 
   loading: any = false;
+  Name: any;
+  number: number;
+  email: any;
+  password: any;
+  rpassword: any;
 
   constructor(public firebaseservice: FirebaseService, private router: Router) { }
 
   ngOnInit() {
   }
 
-  async onsignup(email: string, password: string) {
-    this.loading = true;
-    await this.firebaseservice.signup(email, password);
-    if (this.firebaseservice.isLoggedIn) {
-      this.loading = false;
-      this.router.navigate(['/home']);
+  // tslint:disable-next-line: variable-name
+  async onsignup(Name, number, email, password, rpassword) {
+    if (password === rpassword) {
+      await this.firebaseservice.signup(email, password, Name, number);
+      if (this.firebaseservice.isLoggedIn) {
+        this.router.navigate(['/home']);
+      }
+    }
+    else{
+      // tslint:disable-next-line: quotemark
+      window.alert("Password didn't matched please try again");
     }
   }
 
